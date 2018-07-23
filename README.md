@@ -1,12 +1,12 @@
 # asr service
 ## 1. 编译及跑通样例(ubuntu上验证)
 ### a. 在同一个目录下创建asr, kaldi两个子目录，其中kaldi子目录为kaldi源码
-	i. kaldi子目录
-		1) git clone https://github.com/kaldi-asr/kaldi.git
-		2) 完成编译
-	ii. asr子目录
-		1) asr_sample.tar.gz解压后的文件	
-	目录结构如下：
+    i. kaldi子目录
+        1) git clone https://github.com/kaldi-asr/kaldi.git
+        2) 完成编译
+    ii. asr子目录 
+        1) [asr_sample.tar.gz](https://pan.baidu.com/s/11Mxz6W1Z39-JkNbU8w_MAQ)解压后的文件	
+        目录结构如下：
 		xx/speech
 			kaldi
 				README.md
