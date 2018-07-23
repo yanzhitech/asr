@@ -5,8 +5,7 @@
         1) git clone https://github.com/kaldi-asr/kaldi.git
         2) 完成编译
     ii. asr子目录 
-        1) [asr_sample.tar.gz](https://pan.baidu.com/s/11Mxz6W1Z39-JkNbU8w_MAQ)解压后的文件	
-        目录结构如下：
+        1) 下载[asr_sample.tar.gz](https://pan.baidu.com/s/11Mxz6W1Z39-JkNbU8w_MAQ)(密码发邮件至mezixun@foxmail.com获取) 解压后的文件目录结构如下：
 		xx/speech
 			kaldi
 				README.md
