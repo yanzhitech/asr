@@ -1,0 +1,11 @@
+1.百度 LINUX C++ SDK
+16k采样率，16bit 编码的 pcm, 小端序，单声道，每个包建议320字节（也就是10 ms的数据），传 0 表示该音频流结束。
+（备注：传输音频时的正常调用为：push_params.set_parameter(bds::DATA_CHUNK, audio_buf, (int)read_cnt); // 其中 audio_buf 表示音频包，read_cnt表示音频包的大小，单位是字节；传read_cnt=0表示该音频流结束。
+push_params.set_parameter(bds::DATA_CHUNK, audio_buf, 0);）
+
+2. 出门问问 linux SDK
+16k 采样率，16 bit编码的pcm，小端序，每个包640字节（20ms 的数据）.
+
+3.科大讯飞：采样率为16K，采样深度为16bits的pcm_s16le音频，每40ms发送1280字节，发送间隔超时时间为15秒，结束标识，内容是{"end": true}。
+
+4.阿里云：16k采样率16bit单通道语音通用模型，服务端持续20秒未收到数据会主动断开连接，建议每发送6400字节， 每个包传输200 ms。
