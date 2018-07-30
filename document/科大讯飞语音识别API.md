@@ -1,7 +1,7 @@
 <h1>科大讯飞语音识别API</h1>
 ------------------
 <h2>主要流程</h2>
-![](https://i.imgur.com/nLDJBQ4.png)
+<img src="https://i.imgur.com/nLDJBQ4.png"></img>
 ------------
 ##API详细介绍
 （1）MSPLogin（）
