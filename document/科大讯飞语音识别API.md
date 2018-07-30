@@ -1,17 +1,17 @@
-#科大讯飞语音识别API
+<h1>科大讯飞语音识别API</h1>
 ------------------
-##主要流程
+<h2>主要流程</h2>
 ![](https://i.imgur.com/nLDJBQ4.png)
 ------------
 ##API详细介绍
 （1）MSPLogin（）
-<code>MSPLogin()
+<pre><code>MSPLogin()
 int MSPAPI MSPLogin	(	const char * 	usr,
 const char * 	pwd,
 const char * 	params 
-)	</code>
+)	</code></pre>
 
-**作用：**初始化msc，用户登录。</br></br>
+<strong>作用：</strong>初始化msc，用户登录。</br></br>
 **参数：**</br>
 usr[in]	此参数保留，传入NULL即可。</br>
 pwd[in]	此参数保留，传入NULL即可。</br>
