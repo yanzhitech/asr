@@ -3,7 +3,7 @@
 <h2>主要流程</h2>
 <img src="https://i.imgur.com/nLDJBQ4.png"></img>
 ------------
-##API详细介绍
+<h2>API详细介绍</h2>
 （1）MSPLogin（）
 <pre><code>MSPLogin()
 int MSPAPI MSPLogin	(	const char * 	usr,
@@ -12,7 +12,7 @@ const char * 	params
 )	</code></pre>
 
 <strong>作用：</strong>初始化msc，用户登录。</br></br>
-**参数：**</br>
+<strong>参数：</strong></br>
 usr[in]	此参数保留，传入NULL即可。</br>
 pwd[in]	此参数保留，传入NULL即可。</br>
 params[in]	参见下表：</br>
@@ -20,9 +20,9 @@ params[in]	参见下表：</br>
 注意：每个参数(key)和参数值(value)均不得含有逗号(,)和等号(=)，否则会被截断</br>
 ![](https://i.imgur.com/ROgHAda.png)
 </br></br>
-**返回：**成功返回MSP_SUCCESS，否则返回错误代码（错误码解释：[https://shimo.im/sheet/w3yUy39uNKs0J7DT/undefined](https://shimo.im/sheet/w3yUy39uNKs0J7DT/undefined "详见错误码解释")）</br></br>
-**备注：**使用其他接口前必须先调用MSPLogin，可以在应用程序启动时调用。</br></br>
-**参见：**</br>
+<strong>返回：</strong>成功返回MSP_SUCCESS，否则返回错误代码（错误码解释：[https://shimo.im/sheet/w3yUy39uNKs0J7DT/undefined](https://shimo.im/sheet/w3yUy39uNKs0J7DT/undefined "详见错误码解释")）</br></br>
+<strong>备注：</strong>使用其他接口前必须先调用MSPLogin，可以在应用程序启动时调用。</br></br>
+<strong>参见：</strong></br>
 <pre><code>const char* usr = NULL;
 const char* pwd = NULL;
 const char* lgi_param = "appid = ********";
@@ -35,13 +35,13 @@ printf( "MSPLogin failed, error code is: %d", ret );
 
 2.MSPLogout()
 <pre><code>int MSPAPI MSPLogout	()	</code></pre>
-**作用：**退出登录。</br></br>
+<strong>作用：</strong>退出登录。</br></br>
 
-**返回:**
+<strong>返回:</strong>
 如果函数调用成功返回MSP_SUCCESS，否则返回错误代码，详见错误码列表([https://shimo.im/sheet/w3yUy39uNKs0J7DT](https://shimo.im/sheet/w3yUy39uNKs0J7DT)。</br></br>
-**备注:**
+<strong>备注:</strong>
 本接口和MSPLogin配合使用。确保其他接口调用结束之后调用MSPLogout，否则结果不可预期。</br></br>
-**参见:**
+<strong>参见:</strong>
 <pre><code>int ret = MSPLogout( );
 if(MSP_SUCCESS != ret)
 {
@@ -54,9 +54,9 @@ if(MSP_SUCCESS != ret)
 const char * 	params,
 int * 	errorCode 
 )		</code></pre></br>
-**作用：**开始一次语音识别。</br></br>
+<strong>作用：</strong>开始一次语音识别。</br></br>
 
-**参数：**</br>
+<strong>参数：</strong></br>
 grammarList[in]	参见下表:</br>
 <table>
 <tr>
@@ -305,11 +305,11 @@ params[in]	参见下表:</br>
 </br></br>
 errorCode[out]	函数调用成功则其值为MSP_SUCCESS，否则返回错误代码，详见错误码列表([https://shimo.im/sheet/w3yUy39uNKs0J7DT](https://shimo.im/sheet/w3yUy39uNKs0J7DT))。</br></br>
 
-**返回:**
+<strong>返回:</strong>
 函数调用成功返回字符串格式的sessionID，失败返回NULL。sessionID是本次识别的句柄。</br></br>
-**备注:**
+<strong>备注:</strong>
 参数只在当次识别中生效。</br></br>
-**参见:**
+<strong>参见:</strong>
 <pre><code>const char * params = "engine_type = local, asr_res_path = ****, sample_rate = ****, grm_build_path = ****, local_grammar = ****, result_type = json, result_encoding = UTF-8";
 int    ret = 0;
 const char* sessionID = QISRSessionBegin( NULL, params, &ret );
@@ -327,9 +327,9 @@ int * 	epStatus,
 int * 	recogStatus 
 )	</code></pre></br><br>
 	
-**作用：**写入本次识别的音频。</br></br>
+<strong>作用：</strong>写入本次识别的音频。</br></br>
 
-**参数:**</br>
+<strong>参数:</strong></br>
 sessionID[in]	由QISRSessionBegin返回的句柄。</br>
 waveData[in]	音频数据缓冲区起始地址。</br>
 waveLen[in]	音频数据长度,单位字节。</br>
@@ -411,9 +411,9 @@ rsltStatus[out]	识别器返回的状态，提醒用户及时开始\停止获取
 </tr>
 </table></br></br>
 
-**返回:**</br>
+<strong>返回:</strong></br>
 函数调用成功则其值为MSP_SUCCESS，否则返回错误代码，详见错误码列表。</br>
-**备注:**</br>
+<strong>备注:</strong></br>
 本接口需不断调用，直到音频全部写入为止。上传音频时，需更新audioStatus的值。具体来说:</br>
 当写入首块音频时,将audioStatus置为MSP_AUDIO_SAMPLE_FIRST</br>
 当写入最后一块音频时,将audioStatus置为MSP_AUDIO_SAMPLE_LAST</br>
@@ -422,7 +422,7 @@ rsltStatus[out]	识别器返回的状态，提醒用户及时开始\停止获取
 当epStatus显示已检测到后端点时，MSC已不再接收音频，应及时停止音频写入</br>
 当rsltStatus显示有识别结果返回时，即可从MSC缓存中获取结果</br></br>
 
-**参见:**
+<strong>参见:</strong>
 <pre><code>char audio_data[ 5120 ] ={'\0'};
 unsigned int audio_len = 0;
 int audio_status = 2;
@@ -454,19 +454,19 @@ int 	waitTime,
 int * 	errorCode 
 )	</code></pre></br></br>
 	
-**作用：**获取识别结果。</br></br>
+<strong>作用：</strong>获取识别结果。</br></br>
 
 
-**参数:**</br>
+<strong>参数:</strong></br>
 sessionID[in]	由QISRSessionBegin返回的句柄。</br>
 rsltStatus[out]	识别结果的状态，其取值范围和含义请参考QISRAudioWrite 的参数recogStatus。</br>
 waitTime[in]	此参数做保留用。</br>
 errorCode[out]	函数调用成功则其值为MSP_SUCCESS，否则返回错误代码，详见错误码列表([https://shimo.im/sheet/w3yUy39uNKs0J7DT](https://shimo.im/sheet/w3yUy39uNKs0J7DT))。</br>
-**返回:**</br>
+<strong>返回:</strong></br>
 函数执行成功且有识别结果时，返回结果字符串指针；其他情况(失败或无结果)返回NULL。</br>
-**备注:**</br>
+<strong>备注:</strong></br>
 当写入音频过程中已经有部分识别结果返回时，可以获取结果。在音频写入完毕后，用户需反复调用此接口，直到识别结果获取完毕（rlstStatus值为5）或返回错误码。 注意：如果某次成功调用后暂未获得识别结果，请将当前线程sleep一段时间，以防频繁调用浪费CPU资源。</br>
-**参见:**</br>
+<strong>参见:</strong></br>
 <pre><code>char rslt_str[ 2048 ] ={'\0'};
 const char* rec_result = NULL;
 int rslt_status = 0;
@@ -494,18 +494,18 @@ while(MSP_REC_STATUS_SPEECH_COMPLETE != rslt_status )
 const char * 	hints 
 )	</code></pre></br></br>	
 
-**作用：**结束本次语音识别。</br></br>
+<strong>作用：</strong>结束本次语音识别。</br></br>
 
-**参数:**</br>
+<strong>参数:</strong></br>
 sessionID[in]	由QISRSessionBegin返回的句柄。</br>
 hints[in]	结束本次语音识别的原因描述，为用户自定义内容。
 返回</br>
 函数调用成功则其值为MSP_SUCCESS，否则返回错误代码，详见错误码列表。([https://shimo.im/sheet/w3yUy39uNKs0J7DT](https://shimo.im/sheet/w3yUy39uNKs0J7DT))</br></br>
 
-**备注:**</br>
+<strong>备注:</strong></br>
 本接口和QISRSessionBegin对应,调用此接口后，该句柄对应的相关资源（参数、语法、音频、实例等）都会被释放，用户不应再使用该句柄。</br></br>
 
-**参见:**</br>
+<strong>参见:</strong></br>
 <pre><code>int ret = QISRSessionEnd ( sessionID, "normal end" );
 if( MSP_SUCCESS  != ret )
 {
