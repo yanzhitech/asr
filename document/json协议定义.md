@@ -18,9 +18,9 @@
  }
 
 说明：
+
 ![1](https://github.com/yanzhitech/asrService/blob/master/document/1.PNG)
 
-![1](1.png)
 
 * 服务器：
 {
@@ -66,8 +66,7 @@
   
  }
 
-![2](2.png)
-
+![2](https://github.com/yanzhitech/asrService/blob/master/document/2.PNG)
 
 #### 2.通信阶段：
 
@@ -162,8 +161,9 @@ data：
     }
 	
 	
-![3](3.png)
+![3](https://github.com/yanzhitech/asrService/blob/master/document/3.PNG)
 
 #### 3.错误码说明：
 
-![4](4.png)
+![4](https://github.com/yanzhitech/asrService/blob/master/document/4.PNG)
+
