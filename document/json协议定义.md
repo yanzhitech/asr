@@ -18,6 +18,7 @@
  }
 
 说明：
+[1](https://github.com/yanzhitech/asrService/blob/master/document/1.PNG)
 
 ![1](1.png)
 
