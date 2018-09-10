@@ -1,0 +1,8 @@
+SUBDIRS=json 
+
+bin_PROGRAMS=
+lib_LIBRARIES=
+lib_LTLIBRARIES=
+
+
+
